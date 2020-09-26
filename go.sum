@@ -1,2 +1,6 @@
 github.com/Fanisabonu/bank v0.0.0-20200925123757-7e01526433be h1:jCdgBW3DQHtULTv8CcxvJuc50Cq0la1yZhr0JKJF5Jk=
 github.com/Fanisabonu/bank v0.0.0-20200925123757-7e01526433be/go.mod h1:qzg5cauoQwkBdYwH+cqbPYJxZn1krnTl7/pm3i3a/pU=
+github.com/Fanisabonu/bank v1.0.0 h1:bPZiy8dW7EFGQC1HvmGE84ajAo7ZJ6zTEvlViUfsr48=
+github.com/Fanisabonu/bank v1.0.0/go.mod h1:RuUirgPe4nrk6uVnKPCF2Oh+Ob+t5Fq6PkObrDzVW1U=
+github.com/Fanisabonu/bank/v2 v2.0.0 h1:EqDaIfBpRW3tWKKM+qo6vPrX2bUqMZr6taWTX9Wt2m8=
+github.com/Fanisabonu/bank/v2 v2.0.0/go.mod h1:mSj6wo0zwmsIpZ1TCT/DbN1W6alqynLk6TzyhKArcYo=
