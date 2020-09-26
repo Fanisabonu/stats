@@ -5,13 +5,15 @@ import (
 )
 
 //Avg -
-func Avg(payments []types.Payment) (money types.Money) {
+func Avg(payments []types.Payment) (money types.Money){
+	c :=0 
 	for _, payment := range payments {
 		if payment.Status != types.StatusFail {
+			c++ 
 			money += payment.Amount
 		}
 	}
-	return money / types.Money(len(payments))
+	return money / types.Money(c)
 }
 
 func TotalInCategory(payments []types.Payment, category types.Category) (money types.Money) {
