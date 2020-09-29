@@ -1,8 +1,6 @@
 package stats
 
 import (
-	"reflect"
-	"testing"
 	"github.com/Fanisabonu/bank/v2/pkg/types"
 )
 
@@ -38,47 +36,19 @@ func CategoriesAvg(payments []types.Payment) map[types.Category]types.Money {
 			c[payment.Category]++
 		}
 	}
-	for key:= range moneys  {
-		moneys[key]=moneys[key]/c[key]
+	for key := range moneys {
+		moneys[key] = moneys[key] / c[key]
 	}
-	return moneys 
+	return moneys
 }
 
-func TestCategoriesAvg_manyCategory(t *testing.T) {
-	payments := []types.Payment{
-	  {
-		Category: "car",
-		Amount:   0,
-		Status:   types.StatusOk,
-	  },
-	  {
-		Category: "car",
-		Amount:   100,
-		Status:   types.StatusInProgress,
-	  },
-	  {
-		Category: "food",
-		Amount:   10000,
-		Status:   types.StatusOk,
-	  },
-	  {
-		Category: "fun",
-		Amount:   100,
-		Status:   types.StatusOk,
-	  },
-	  {
-		Category: "fun",
-		Amount:   100,
-		Status:   types.StatusFail,
-	  },
+func PeriodsDynamic(first map[types.Category]types.Money, second map[types.Category]types.Money) map[types.Category]types.Money {
+	moneys := map[types.Category]types.Money{}
+	for key, amount:= range first{
+		moneys [key]-= amount
 	}
-	want := map[types.Category]types.Money{
-	  "car":  50,
-	  "food": 10000,
-	  "fun":  100,
+	for key, amount:= range second{
+		moneys [key]+= amount
 	}
-	got := CategoriesAvg(payments)
-	if !reflect.DeepEqual(want, got) {
-	  t.Errorf("want: %v, got: %v", want, got)
-	}
-  }
+	return moneys
+}
